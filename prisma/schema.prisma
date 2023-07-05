@@ -13,7 +13,7 @@ datasource db {
 model Cliente {
   id       Int     @id @default(autoincrement())
   nome     String
-  telefone Int
+  telefone String
   endereco String
   Venda    Venda[]
 

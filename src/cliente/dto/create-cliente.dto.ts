@@ -5,9 +5,9 @@ export class CreateClienteDto {
   @IsNotEmpty()
   nome: string;
 
-  @IsNumber()
+  @IsString()
   @IsNotEmpty()
-  telefone: number;
+  telefone: string;
 
   @IsString()
   @IsNotEmpty()
