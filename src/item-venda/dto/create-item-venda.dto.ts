@@ -4,7 +4,7 @@ export class CreateItemVendaDto {
   @IsNumber()
   quantidade: number;
 
-  //@IsNumber
+  @IsNumber()
   desconto: number;
 
   @IsNumber()

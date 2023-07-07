@@ -15,7 +15,21 @@ export class VendaRepository {
   }
 
   async findAll(): Promise<VendaEntity[]> {
-    return this.prisma.venda.findMany();
+    return this.prisma.venda.findMany({
+      include: {
+        cliente: true,
+        atendente: {
+          select: {
+            nome: true,
+          },
+        },
+        itemVenda: {
+          select: {
+            produto: true,
+          },
+        },
+      },
+    });
   }
 
   async findOne(id: number): Promise<VendaEntity> {
