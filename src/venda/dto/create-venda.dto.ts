@@ -1,9 +1,9 @@
-import { IsDateString, IsNotEmpty, IsNumber } from 'class-validator';
+import { IsDateString, IsNotEmpty, IsNumber, IsString } from 'class-validator';
 
 export class CreateVendaDto {
-  @IsDateString()
+  @IsString()
   @IsNotEmpty()
-  data: Date;
+  data: string;
 
   @IsNumber()
   clienteId: number;

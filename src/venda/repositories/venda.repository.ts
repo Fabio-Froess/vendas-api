@@ -9,8 +9,16 @@ export class VendaRepository {
   constructor(private readonly prisma: PrismaService) {}
 
   async create(createVendaDto: CreateVendaDto): Promise<VendaEntity> {
+    const { data, atendenteId, clienteId, itemVendaId } = createVendaDto;
+    const dataVenda = new Date(data);
+
     return this.prisma.venda.create({
-      data: createVendaDto,
+      data: {
+        data: dataVenda,
+        atendenteId,
+        clienteId,
+        itemVendaId,
+      },
     });
   }
 
